@@ -1,2 +1,19 @@
 services:
-  dsp:
+  spaces:
+    build:
+      context: dsp
+    env_file: []
+    environment:
+      - ZEEBE_GRPC_ADDR=localhost:26500
+    #healthcheck:
+    #  test: timeout 5 bash -c 'cat < /dev/null > /dev/tcp/localhost/8000'
+    #  interval: 5s
+    #  timeout: 5s
+    #  retries: 12
+    #ports:
+    #  - '9011:8000'
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./dsp/dsp_spaces:/app/dsp_spaces
+    working_dir: /app

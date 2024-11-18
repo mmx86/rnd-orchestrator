@@ -1,15 +1,22 @@
-FROM python:3.13-slim-bookworm
-
-# Set working directory.
-WORKDIR /app
+FROM python:3.10-slim-bookworm
 
 # Install python dependencies.
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt && \
+    pip install --verbose --no-cache-dir -r requirements.txt && \
     rm requirements.txt
 
-# Copy application.
-COPY dsp dsp
+# Add app user.
+RUN useradd --user-group --no-log-init app
+USER app
 
-CMD ["sh", "-c", "alembic upgrade head && uvicorn --host 0.0.0.0 --port 8000 --http httptools dsp_spaces.app:app"]
+# Set app working directory.
+WORKDIR /app
+
+# Copy app.
+# TODO: fix (dsp/dsp -> dsp).
+COPY dsp_spaces /app
+COPY dsp_common /app
+
+# Run app.
+CMD ["sh", "-c", "python -m dsp"]

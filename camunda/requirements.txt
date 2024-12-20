@@ -1,3 +1,4 @@
-coloredlogs
+loguru
 pydantic
+pydantic-settings
 pyzeebe

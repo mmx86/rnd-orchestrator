@@ -1,19 +1,21 @@
 services:
-  spaces:
+  dsp:
     build:
-      context: dsp
+      context: .
     env_file: []
     environment:
-      - ZEEBE_GRPC_ADDR=localhost:26500
+      - ZEEBE_GRPC_ADDRESS=host.docker.internal:26500
     #healthcheck:
     #  test: timeout 5 bash -c 'cat < /dev/null > /dev/tcp/localhost/8000'
     #  interval: 5s
     #  timeout: 5s
     #  retries: 12
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     #ports:
     #  - '9011:8000'
     stdin_open: true
     tty: true
     volumes:
-      - ./dsp/dsp_spaces:/app/dsp_spaces
+      - ./dsp/:/app/
     working_dir: /app

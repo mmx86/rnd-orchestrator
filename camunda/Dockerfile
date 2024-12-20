@@ -1,4 +1,4 @@
-FROM python:3.10-slim-bookworm
+FROM python:3.13-slim-bookworm
 
 # Install python dependencies.
 COPY requirements.txt requirements.txt
@@ -15,8 +15,7 @@ WORKDIR /app
 
 # Copy app.
 # TODO: fix (dsp/dsp -> dsp).
-COPY dsp_spaces /app
-COPY dsp_common /app
+COPY dsp/ app
 
 # Run app.
 CMD ["sh", "-c", "python -m dsp"]

@@ -1,25 +1,22 @@
 import asyncio
 import dataclasses
-import logging
 import pprint
 
-import coloredlogs
+import loguru
 import pyzeebe
 
+import dsp
 
-coloredlogs.install()
-logging.basicConfig(level=logging.DEBUG)
-
-logger = logging.getLogger(__name__)
+logger = loguru.logger
 
 
 async def main():
     # Create a zeebe client
-    channel = pyzeebe.create_insecure_channel(grpc_address="localhost:26500")
+    channel = pyzeebe.create_insecure_channel(grpc_address=dsp.settings.ZEEBE_GRPC_ADDRESS)
     zeebe_client = pyzeebe.ZeebeClient(channel)
 
     # Deploy a BPMN process definition
-    response = await zeebe_client.deploy_resource("dsp-spaces/processes/create-space.bpmn")
+    response = await zeebe_client.deploy_resource("dsp/processes/create-space.bpmn")
     logger.info('Response:\n' + pprint.pformat(dataclasses.asdict(response)))
 
     ## Run a Zeebe process instance

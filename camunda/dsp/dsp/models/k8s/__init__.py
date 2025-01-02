@@ -1,1 +1,1 @@
-from .namespace import K8sNamespace
+from .namespace import Namespace

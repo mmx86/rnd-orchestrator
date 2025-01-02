@@ -17,5 +17,8 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./dsp/:/app/
+      - ./dsp/:/app/dsp/
+      - ./dsp_common/:/app/dsp_common/
+      - ./pytest.ini:/app/pytest.ini
+      - ./tests/:/app/tests/
     working_dir: /app

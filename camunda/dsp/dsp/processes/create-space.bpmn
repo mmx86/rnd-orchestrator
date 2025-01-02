@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="ab92ea9" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.6.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="14b513a" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.6.0">
   <bpmn:process id="Process_1ic93l2" name="create-space" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
+      <bpmn:extensionElements>
+        <zeebe:properties />
+      </bpmn:extensionElements>
       <bpmn:outgoing>Flow_0d060kb</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0d060kb" sourceRef="StartEvent_1" targetRef="Activity_18krrt7" />
@@ -17,9 +20,9 @@
     <bpmn:sequenceFlow id="Flow_1smwe9i" sourceRef="Activity_06yegzx" targetRef="Event_1yxx22q" />
     <bpmn:sequenceFlow id="Flow_0bnyk41" sourceRef="Activity_18krrt7" targetRef="Activity_0fdb1be" />
     <bpmn:sequenceFlow id="Flow_1y7bf5i" sourceRef="Activity_0fdb1be" targetRef="Event_1yxx22q" />
-    <bpmn:serviceTask id="Activity_1bzur71" name="insert-db-instance">
+    <bpmn:serviceTask id="Activity_1bzur71" name="create-db-instance">
       <bpmn:extensionElements>
-        <zeebe:taskDefinition type="insert-db-instance" />
+        <zeebe:taskDefinition type="create-db-instance" />
         <zeebe:ioMapping>
           <zeebe:input source="=space" target="space" />
         </zeebe:ioMapping>
@@ -77,12 +80,16 @@
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="150" y="222" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1bdsu80_di" bpmnElement="Activity_18krrt7">
-        <dc:Bounds x="240" y="200" width="100" height="80" />
-        <bpmndi:BPMNLabel />
+      <bpmndi:BPMNShape id="Event_1yxx22q_di" bpmnElement="Event_1yxx22q">
+        <dc:Bounds x="692" y="222" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0om9k3q_di" bpmnElement="Activity_1bzur71">
         <dc:Bounds x="400" y="100" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1bdsu80_di" bpmnElement="Activity_18krrt7">
+        <dc:Bounds x="240" y="200" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0bazw0a_di" bpmnElement="Activity_0fdb1be">
         <dc:Bounds x="400" y="200" width="100" height="80" />
@@ -92,9 +99,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0x5y0o6_di" bpmnElement="Activity_06yegzx">
         <dc:Bounds x="560" y="300" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1yxx22q_di" bpmnElement="Event_1yxx22q">
-        <dc:Bounds x="692" y="222" width="36" height="36" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0d060kb_di" bpmnElement="Flow_0d060kb">
         <di:waypoint x="186" y="240" />

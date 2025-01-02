@@ -2,3 +2,7 @@ loguru
 pydantic
 pydantic-settings
 pyzeebe
+
+# Tests
+pytest
+pytest-asyncio

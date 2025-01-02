@@ -1,11 +1,11 @@
 import sys
 
-from loguru import logger
+import loguru
 
 from ._settings import settings
 
 
-logger.configure(
+loguru.logger.configure(
     handlers=[
         {'sink': sys.stderr, 'level': 'DEBUG'},
     ],

@@ -1,5 +1,5 @@
 import pydantic
 
 
-class K8sNamespace(pydantic.BaseModel):
+class Namespace(pydantic.BaseModel):
     name: str

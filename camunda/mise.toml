@@ -1,0 +1,3 @@
+[tasks.develop]
+description = "Docker compose up service"
+run = "docker compose -f camunda-platform/docker-compose.yaml -f dsp/docker-compose.yaml up"

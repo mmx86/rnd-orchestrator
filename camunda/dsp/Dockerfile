@@ -15,7 +15,11 @@ WORKDIR /app
 
 # Copy app.
 # TODO: fix (dsp/dsp -> dsp).
-COPY dsp/ app
+COPY dsp dsp
+COPY dsp_common dsp_common
+COPY pytest.ini pytest.ini
+COPY tests tests
+
 
 # Run app.
 CMD ["sh", "-c", "python -m dsp"]

@@ -1,3 +1,6 @@
 [submodule "camunda/camunda-platform"]
 	path = camunda/camunda-platform
 	url = https://github.com/camunda/camunda-platform.git
+[submodule "temporal/docker-compose"]
+	path = temporal/docker-compose
+	url = org-56493103@github.com:temporalio/docker-compose.git

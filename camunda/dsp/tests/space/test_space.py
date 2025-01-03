@@ -1,7 +1,3 @@
-import asyncio
-import dataclasses
-import pprint
-
 import loguru
 import pytest
 import pyzeebe
@@ -12,7 +8,7 @@ logger = loguru.logger
 
 
 @pytest.mark.asyncio
-async def _test_create_space(
+async def test_create_space(
         zeebe_client: pyzeebe.ZeebeClient,
 ):
     pass
@@ -36,5 +32,3 @@ async def _test_create_space(
 
     # Publish message
     #await zeebe_client.publish_message(name="message_name", correlation_key="some_id")
-
-

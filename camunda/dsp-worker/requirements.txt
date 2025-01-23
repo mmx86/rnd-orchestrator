@@ -1,5 +1,3 @@
-fastapi
-uvicorn
 loguru
 pydantic
 pydantic-settings

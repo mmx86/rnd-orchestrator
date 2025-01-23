@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 WORKDIR /app
 
 # Copy app.
-COPY dsp /app/dsp
+COPY dsp_worker /app/dsp_worker
 
 # Run app.
-CMD ["uvicorn", "dsp.app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["python", "-m", "dsp_worker"]

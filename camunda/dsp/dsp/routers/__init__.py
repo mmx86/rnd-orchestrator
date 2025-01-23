@@ -1,6 +1,11 @@
-from .spaces.create_space import router as create_space_router
+import fastapi
+
+from . import app
+from . import camunda
 
 
-all_routers = [
-    create_space_router,
-]
+router = fastapi.APIRouter()
+
+
+router.include_router(app.router, prefix='/app/v1')
+router.include_router(camunda.router, prefix='/camunda')

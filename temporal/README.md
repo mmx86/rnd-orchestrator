@@ -28,3 +28,4 @@ index 46fb9eb..b8ad1ff 100644
 * https://temporal.io/blog/saga-pattern-made-easy
 ## Other
 * https://www.youtube.com/watch?v=6T6zVZHU7_Q
+

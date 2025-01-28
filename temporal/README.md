@@ -23,6 +23,12 @@ index 46fb9eb..b8ad1ff 100644
 ```
 
 # Links
+## Workflow determinism
+* https://community.temporal.io/t/workflow-determinism/4027
+## Migrations / versioning
+* https://docs.temporal.io/develop/python#versioning
+* https://www.youtube.com/watch?v=kkP899WxgzY
+* https://community.temporal.io/t/migrate-long-running-older-workflows/600
 ## Saga
 * https://pages.temporal.io/rs/250-WIU-007/images/tech-guide-saga-pattern-made-easy.pdf
 * https://temporal.io/blog/saga-pattern-made-easy

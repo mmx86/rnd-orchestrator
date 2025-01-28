@@ -9,7 +9,7 @@ import dsp_worker
 
 async def fake_work(
         t_mix: int = 1,
-        t_max: int = 5,
+        t_max: int = 4,
 ):
     work_time = random.uniform(t_mix, t_max)
     await asyncio.sleep(work_time)

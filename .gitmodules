@@ -4,3 +4,6 @@
 [submodule "temporal/docker-compose"]
 	path = temporal/docker-compose
 	url = org-56493103@github.com:temporalio/docker-compose.git
+[submodule "temporal/temporal"]
+	path = temporal/temporal
+	url = org-56493103@github.com:temporalio/docker-compose.git

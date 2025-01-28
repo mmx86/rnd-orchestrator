@@ -13,7 +13,7 @@ router = pyzeebe.ZeebeTaskRouter(
 
 
 async def fake_work():
-    work_time = random.uniform(1, 1)
+    work_time = random.uniform(1, 5)
     await asyncio.sleep(work_time)
 
 

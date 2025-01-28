@@ -18,11 +18,11 @@ async def run(
     arg = {
         'id': workflow_id,
     }
-    response = await temporal_client.execute_workflow(
+    response = await temporal_client.start_workflow(
         'AutomlWorkflow',
         arg,
         id=f'user-process-{workflow_id}',
         task_queue=AUTOML_TASK_QUEUE,
     )
 
-    return response
+    return f'Started workflow with id={workflow_id}'
